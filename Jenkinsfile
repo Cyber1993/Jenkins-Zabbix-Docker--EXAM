@@ -28,7 +28,7 @@ pipeline  {
 
     
                 
-        tage("docker login") {
+        stage("docker login") {
             steps {
                 echo " ============== docker login =================="
                 withCredentials([usernamePassword(credentialsId: '2eba81a8-f30c-478f-9670-75760b456ef2', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
