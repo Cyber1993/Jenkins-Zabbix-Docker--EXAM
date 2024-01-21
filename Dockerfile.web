@@ -1,0 +1,4 @@
+FROM yurashupik/zabbix:3
+
+COPY ./timezone /etc/timezone
+COPY ./localtime /etc/localtime

@@ -1,0 +1,5 @@
+FROM yurashupik/zabbix:2
+
+COPY ./alertscripts /usr/lib/zabbix/alertscripts
+COPY ./timezone /etc/timezone
+COPY ./localtime /etc/localtime

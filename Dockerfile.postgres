@@ -1,0 +1,7 @@
+FROM yurashupik/zabbix:1
+ENV POSTGRES_DB zabbix
+ENV POSTGRES_USER zabbix
+ENV POSTGRES_PASSWORD zabbix
+
+COPY ./timezone /etc/timezone
+COPY ./localtime /etc/localtime
