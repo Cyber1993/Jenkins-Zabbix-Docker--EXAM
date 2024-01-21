@@ -13,27 +13,17 @@ pipeline  {
     }
     stages {
        
-        stage("zabbix-postgres") {
+        stage("zabbix") {
             steps {
                 sh '''
-                docker build -t zabbix-postgres -f Dockerfile.postgres .
+                docker build -t zabbix-postgres -f /var/lib/jenkins/workspace/EXAM---JENKINS/Dockerfile.postgres /var/lib/jenkins/workspace/EXAM---JENKINS/
+                docker build -t zabbix-server -f /var/lib/jenkins/workspace/EXAM---JENKINS/Dockerfile.server /var/lib/jenkins/workspace/EXAM---JENKINS/
+                docker build -t zabbix-web -f /var/lib/jenkins/workspace/EXAM---JENKINS/Dockerfile.web /var/lib/jenkins/workspace/EXAM---JENKINS/
+
                 '''
             } 
         }
-        stage("zabbix-server") {
-            steps {
-                sh '''
-                docker build -t zabbix-server -f Dockerfile.server .
-                '''
-            } 
-        }
-        stage("zabbix-web") {
-            steps {
-                sh '''
-                docker build -t zabbix-web -f Dockerfile.web .
-                '''
-            } 
-        }
+
 
 
     
